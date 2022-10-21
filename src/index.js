@@ -7,11 +7,11 @@ import { PokemonsContext } from './contexts/PokemonsContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
-    <PokemonsContext>
-      <App />
-    </PokemonsContext>
-  </React.StrictMode>
+	<React.StrictMode>
+		<PokemonsContext>
+			<App />
+		</PokemonsContext>
+	</React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function
