@@ -1,0 +1,52 @@
+.gallery-item {
+    position: relative;
+    flex: 1 0 22rem;
+    margin: 1rem;
+    cursor: pointer;
+    border: 3px solid green;
+    border-radius: 10px;
+    align-self: flex-start
+}
+
+.gallery-item-img {
+    display: flex;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.gallery-item-img img {
+    width: 80%;
+    height: auto;
+}
+
+.gallery-item-title {
+    display: flex;
+    background: green;
+    color: white;
+    justify-content: center;
+}
+
+.gallery-item-title h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.gallery-item-id {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+    margin-top: 3%;
+    color: green;
+}
+
+.gallery-item-id span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 21px;
+}

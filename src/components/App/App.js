@@ -6,9 +6,11 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'></header>
-      <PokemonsContextProvider>
-        <Home />
-      </PokemonsContextProvider>
+      <main className='container'>
+        <PokemonsContextProvider>
+          <Home />
+        </PokemonsContextProvider>
+      </main>
     </div>
   )
 }

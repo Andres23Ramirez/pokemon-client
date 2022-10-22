@@ -1,16 +1,14 @@
 import { useContext } from 'react'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
+import { Pokemon } from '../Pokemon/Pokemon'
+import './Home.css'
 
 const Home = () => {
   const { values } = useContext(PokemonsContext)
   return (
-    <div>
+    <div className='gallery'>
       {values?.map((item, index) => {
-        return (
-          <div key={index}>
-            <p>Name: {item.name}</p>
-          </div>
-        )
+        return <Pokemon key={index} item={item} />
       })}
     </div>
   )
