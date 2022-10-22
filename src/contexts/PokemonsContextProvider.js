@@ -4,24 +4,33 @@ import { getPokemonsIndex } from '../api/pokemons-index'
 import { PokemonsContext } from './PokemonsContext'
 
 const PokemonsContextProvider = ({ children }) => {
-  const [queryParams] = useState({
-    page: 1,
-    per_page: 10,
+  const [currentPage, setCurrenPage] = useState(0)
+  const [queryParams, setQueryParams] = useState({
+    page: currentPage,
+    perPage: 12,
   })
   const [values, setValues] = useState([])
 
-  const { data, status } = useQuery('pokemons', () =>
+  const { data, status } = useQuery(['pokemons', queryParams], () =>
     getPokemonsIndex(queryParams)
   )
 
   useEffect(() => {
     if (status === 'success') {
-      setValues(data)
+      setValues([...values, ...data])
     }
   }, [data, status])
 
   return (
-    <PokemonsContext.Provider value={{ values }}>
+    <PokemonsContext.Provider
+      value={{
+        values,
+        queryParams,
+        setQueryParams,
+        currentPage,
+        setCurrenPage,
+      }}
+    >
       {children}
     </PokemonsContext.Provider>
   )
