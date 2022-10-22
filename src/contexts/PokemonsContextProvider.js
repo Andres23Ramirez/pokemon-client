@@ -1,10 +1,14 @@
 import { useContext } from 'react'
 import { PokemonsContext } from './PokemonsContext'
 
-const PokemonsContextProvider = ({ children, providedValues }) => {
-	const context = useContext(PokemonsContext)
+const PokemonsContextProvider = ({ children }) => {
+	const { pokemons } = useContext(PokemonsContext)
 
-	return <context.Provider value={providedValues}>{children}</context.Provider>
+	return (
+		<PokemonsContext.Provider value={{ pokemons }}>
+			{children}
+		</PokemonsContext.Provider>
+	)
 }
 
 export { PokemonsContextProvider }

@@ -1,5 +1,7 @@
 import { createContext } from 'react'
 
-const PokemonsContext = createContext({})
+const pokemonInterface = {}
+
+const PokemonsContext = createContext(pokemonInterface)
 
 export { PokemonsContext }
