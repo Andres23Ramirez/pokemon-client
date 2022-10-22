@@ -8,7 +8,11 @@ const Home = () => {
   return (
     <div className='gallery'>
       {values?.map((item, index) => {
-        return <Pokemon key={index} item={item} />
+        return (
+          <div key={index}>
+            <Pokemon key={index} item={item} />
+          </div>
+        )
       })}
     </div>
   )

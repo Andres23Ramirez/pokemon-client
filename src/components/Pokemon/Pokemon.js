@@ -1,8 +1,8 @@
 import './Pokemon.css'
 
-const Pokemon = ({ key, item }) => {
+const Pokemon = ({ item }) => {
   return (
-    <div key={key} className='gallery-item'>
+    <div className='gallery-item'>
       <div className='gallery-item-id'>
         <span>#{item.id}</span>
       </div>
