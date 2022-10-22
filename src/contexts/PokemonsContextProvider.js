@@ -1,11 +1,27 @@
-import { useContext } from 'react'
+import { useEffect, useState } from 'react'
+import { useQuery } from 'react-query'
+import { getPokemonsIndex } from '../api/pokemons-index'
 import { PokemonsContext } from './PokemonsContext'
 
 const PokemonsContextProvider = ({ children }) => {
-  const { pokemons } = useContext(PokemonsContext)
+  const [queryParams] = useState({
+    page: 1,
+    per_page: 10,
+  })
+  const [values, setValues] = useState([])
+
+  const { data, status } = useQuery('pokemons', () =>
+    getPokemonsIndex(queryParams)
+  )
+
+  useEffect(() => {
+    if (status === 'success') {
+      setValues(data)
+    }
+  }, [data, status])
 
   return (
-    <PokemonsContext.Provider value={{ pokemons }}>
+    <PokemonsContext.Provider value={{ values }}>
       {children}
     </PokemonsContext.Provider>
   )

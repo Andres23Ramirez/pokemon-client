@@ -2,10 +2,10 @@ import { useContext } from 'react'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 
 const Home = () => {
-  const { pokemons } = useContext(PokemonsContext)
+  const { values } = useContext(PokemonsContext)
   return (
     <div>
-      {pokemons?.map((item, index) => {
+      {values?.map((item, index) => {
         return (
           <div key={index}>
             <p>Name: {item.name}</p>
