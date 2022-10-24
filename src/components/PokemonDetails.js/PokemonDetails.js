@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { PokemonContext } from '../../contexts/PokemonContext'
+import ProgressBar from './PogressBar'
 import './PokemonDetails.css'
 
 const PokemonDetails = () => {
@@ -58,19 +59,44 @@ const PokemonDetails = () => {
             </div>
           </div>
         </div>
-        <div className='description'>
-          <p>{values?.description}</p>
-        </div>
+
+        <span>{values?.description}</span>
         <div className='stats'>
-          {values?.stats?.map((item, index) => {
-            return (
-              <div key={index}>
-                <span>{item?.name}</span>
-                <span>{item?.value}</span>
-                <span>barra</span>
-              </div>
-            )
-          })}
+          <h2>Base Stats</h2>
+          <div className='stats-container'>
+            <div className='stats-names'>
+              {values?.stats?.map((item, index) => {
+                return (
+                  <div key={index} className={'stats-item'}>
+                    <span>{item?.name}</span>
+                  </div>
+                )
+              })}
+            </div>
+            <img src='/icons/Stats-separator.svg' className='stats-separator' />
+            <div className='stats-values'>
+              {values?.stats?.map((item, index) => {
+                return (
+                  <div key={index} className={'stats-item'}>
+                    <span>{item?.value}</span>
+                  </div>
+                )
+              })}
+            </div>
+            <div className='stats-progress'>
+              {values?.stats?.map((item, index) => {
+                return (
+                  <div key={index} className={'stats-item'}>
+                    <ProgressBar
+                      key={index}
+                      bgcolor={'#74CB48'}
+                      completed={item.value}
+                    />
+                  </div>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </div>

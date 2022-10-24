@@ -33,13 +33,13 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 0 10%;
 }
 
 .pokemon-details .types {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   color: white
 }
 
@@ -130,4 +130,58 @@
   width: 1px;
   height: 79.71px;
   background-color: #E0E0E0;
+}
+
+.stats h2 {
+  text-align: center;
+  color: #74CB48;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.stats-names {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  color: #74CB48;
+  width: 39%;
+  margin: 0 5px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.stats-names .stats-item {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stats-values {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0 5px;
+}
+
+.stats-progress {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 5px;
+}
+
+.stats-item {
+  display: flex;
+  width: 100%;
+  height: 20px;
 }
