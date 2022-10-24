@@ -10,7 +10,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <div className='App-header-container'>
-          <img src='/pokeball.jpg' />
+          <img src='/icons/Pokeball.svg' />
           <h1>Poke App</h1>
         </div>
       </header>

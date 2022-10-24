@@ -1,6 +1,6 @@
 .container {
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: 0 0;
+    padding: 0;
 }
 
 .App-header-container {
@@ -10,10 +10,16 @@
 }
 
 .App-header-container h1 {
-    margin: 0 0 0 10px;
+    margin: 25px 0 0 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 45px;
 }
 
 .App-header img {
+    margin: 25px 0 10px 137px;
     width: 50px;
     height: 50px;
 }

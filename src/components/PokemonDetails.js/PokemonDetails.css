@@ -1,0 +1,30 @@
+.pokemon-container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #74CB48;
+}
+
+.pokemon-image {
+  background-image: url('/public/icons/Pokeball_bg.svg');
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.pokemon-image h2 {
+  margin: 131px 0 0 93px;
+  color: white;
+  width: 312px;
+  height: 32px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 32px;
+}
+
+.pokemon-image img {
+  margin: 0 5px 165px 93px;
+}

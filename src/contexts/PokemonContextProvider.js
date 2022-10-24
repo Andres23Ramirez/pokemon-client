@@ -15,7 +15,7 @@ const PokemonContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (status === 'success') {
-      setValues(values)
+      setValues(data)
     }
   }, [data, status])
 
