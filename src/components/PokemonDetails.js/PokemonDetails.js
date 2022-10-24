@@ -21,28 +21,40 @@ const PokemonDetails = () => {
       <div className='pokemon-details'>
         <div className='types'>
           {values?.types?.map((item, index) => {
-            return <span key={index}>{item}</span>
+            return (
+              <div className='type-container' key={index}>
+                {<span>{item}</span>}
+              </div>
+            )
           })}
         </div>
         <div className='about-container'>
           <h2>About</h2>
           <div className='about-details'>
-            <div className='about-detils-item'>
+            <div className='about-details-item'>
               <img src='/icons/Weight.svg' alt='weight icon' />
-              <span>{values?.weight}</span>
-              <spa>Weight</spa>
+              <span>{values?.weight} kg</span>
+              <div>
+                <h3>Weight</h3>
+              </div>
             </div>
-            <div className='about-detils-item'>
+            <img className='separator' src='/icons/separator.svg' />
+            <div className='about-details-item'>
               <img src='/icons/Height.svg' alt='Height icon' />
-              <span>{values?.Height}</span>
-              <spa>Height</spa>
+              <span>{values?.height} m</span>
+              <div>
+                <h3>Height</h3>
+              </div>
             </div>
-            <div className='about-detils-item'>
+            <img className='separator' src='/icons/separator.svg' />
+            <div className='about-details-item'>
               <img src='/icons/Moves.svg' alt='moves icon' />
               {values?.moves?.map((item, index) => {
                 return <span key={index}>{item}</span>
               })}
-              <spa>Moves</spa>
+              <div>
+                <h3>Moves</h3>
+              </div>
             </div>
           </div>
         </div>
