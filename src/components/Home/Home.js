@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 import { Pokemon } from '../Pokemon/Pokemon'
 import './Home.css'
@@ -33,7 +34,9 @@ const Home = () => {
       {values?.map((item, index) => {
         return (
           <div key={index}>
-            <Pokemon key={index} item={item} />
+            <Link to={'pokemons/' + item.name}>
+              <Pokemon key={index} item={item} />
+            </Link>
           </div>
         )
       })}
