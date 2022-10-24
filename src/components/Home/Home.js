@@ -34,7 +34,7 @@ const Home = () => {
       {values?.map((item, index) => {
         return (
           <div key={index}>
-            <Link to={'pokemons/' + item.name}>
+            <Link to={'pokemons/' + item.id}>
               <Pokemon key={index} item={item} />
             </Link>
           </div>

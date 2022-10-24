@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { PokemonContextProvider } from '../../contexts/PokemonContextProvider'
 import { PokemonsContextProvider } from '../../contexts/PokemonsContextProvider'
 import { Home } from '../Home/Home'
 import { PokemonDetails } from '../PokemonDetails.js/PokemonDetails'
@@ -18,7 +19,14 @@ function App() {
           <BrowserRouter basename='/'>
             <Routes>
               <Route path='*' element={<Home />} />
-              <Route path='pokemons/:name' element={<PokemonDetails />} />
+              <Route
+                path='pokemons/:id'
+                element={
+                  <PokemonContextProvider>
+                    <PokemonDetails />
+                  </PokemonContextProvider>
+                }
+              />
             </Routes>
           </BrowserRouter>
         </PokemonsContextProvider>
