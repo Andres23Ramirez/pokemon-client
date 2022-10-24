@@ -1,20 +1,26 @@
 import { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { PokemonContext } from '../../contexts/PokemonContext'
+import { useFindColorByType } from '../../Hooks/useFindColorByType'
 import ProgressBar from './PogressBar'
 import './PokemonDetails.css'
 
 const PokemonDetails = () => {
   const { values, setIdParam } = useContext(PokemonContext)
-  console.log(values)
   const { id } = useParams()
+  const typeColor = useFindColorByType(
+    values?.types?.length > 0 ? values.types[0] : 'normal'
+  )
+  const styles = { background: typeColor }
+
+  const styleColor = { color: typeColor }
 
   useEffect(() => {
     setIdParam(id)
   }, [])
 
   return (
-    <div className='pokemon-container'>
+    <div className='pokemon-container' style={styles}>
       <div className='pokemon-image'>
         <h2>{values?.name}</h2>
         <img src={values?.imageUrl} />
@@ -22,15 +28,19 @@ const PokemonDetails = () => {
       <div className='pokemon-details'>
         <div className='types'>
           {values?.types?.map((item, index) => {
+            const typeColor = useFindColorByType(item)
+            const styles = {
+              background: typeColor,
+            }
             return (
-              <div className='type-container' key={index}>
+              <div className='type-container' key={index} style={styles}>
                 {<span>{item}</span>}
               </div>
             )
           })}
         </div>
         <div className='about-container'>
-          <h2>About</h2>
+          <h2 style={styleColor}>About</h2>
           <div className='about-details'>
             <div className='about-details-item'>
               <img src='/icons/Weight.svg' alt='weight icon' />
@@ -62,12 +72,12 @@ const PokemonDetails = () => {
 
         <span>{values?.description}</span>
         <div className='stats'>
-          <h2>Base Stats</h2>
+          <h2 style={styleColor}>Base Stats</h2>
           <div className='stats-container'>
             <div className='stats-names'>
               {values?.stats?.map((item, index) => {
                 return (
-                  <div key={index} className={'stats-item'}>
+                  <div key={index} className={'stats-item'} style={styleColor}>
                     <span>{item?.name}</span>
                   </div>
                 )
@@ -89,7 +99,7 @@ const PokemonDetails = () => {
                   <div key={index} className={'stats-item'}>
                     <ProgressBar
                       key={index}
-                      bgcolor={'#74CB48'}
+                      bgcolor={typeColor}
                       completed={item.value}
                     />
                   </div>

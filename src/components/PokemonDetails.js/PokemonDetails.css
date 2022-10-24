@@ -26,7 +26,7 @@
 }
 
 .pokemon-image img {
-  margin: 0 5px 165px 93px;
+  margin: 0 5px 0px 93px;
 }
 
 .pokemon-details {
@@ -34,7 +34,7 @@
   flex-direction: column;
   background-color: white;
   justify-content: space-evenly;
-  padding: 0 10%;
+  padding: 0 5%;
 }
 
 .pokemon-details .types {
